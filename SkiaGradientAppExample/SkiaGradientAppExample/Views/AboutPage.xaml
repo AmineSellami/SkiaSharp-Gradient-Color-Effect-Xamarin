@@ -1,0 +1,43 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="SkiaGradientAppExample.Views.AboutPage"
+             xmlns:behaviors="clr-namespace:SkiaGradientAppExample.Behaviors"
+             xmlns:skia="clr-namespace:SkiaSharp.Views.Forms;assembly=SkiaSharp.Views.Forms"
+             Title="{Binding Title}">
+    
+    <Grid RowSpacing="0">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+        <Image Grid.Row="0" Source="image.jpg" VerticalOptions="FillAndExpand" Aspect="AspectFill" HorizontalOptions="FillAndExpand"/>
+        <skia:SKCanvasView Grid.Row="0" x:Name="canvasView" 
+                           VerticalOptions="FillAndExpand" 
+                           Opacity="0.5">
+            <skia:SKCanvasView.Behaviors>
+                <behaviors:GradientBehavior GradientColor="#FF0000" />
+            </skia:SKCanvasView.Behaviors>
+        </skia:SKCanvasView>
+
+        <Image Grid.Row="1" Source="image.jpg" VerticalOptions="FillAndExpand" Aspect="AspectFill" HorizontalOptions="FillAndExpand"/>
+        <skia:SKCanvasView Grid.Row="1"
+                           VerticalOptions="FillAndExpand"
+                           Opacity="0.5">
+            <skia:SKCanvasView.Behaviors>
+                <behaviors:GradientBehavior GradientColor="#00FF00" />
+            </skia:SKCanvasView.Behaviors>
+        </skia:SKCanvasView>
+
+        <Image Grid.Row="2" Source="image.jpg" VerticalOptions="FillAndExpand" Aspect="AspectFill" HorizontalOptions="FillAndExpand"/>
+        <skia:SKCanvasView Grid.Row="2" 
+                           VerticalOptions="FillAndExpand"
+                           Opacity="0.5">
+            <skia:SKCanvasView.Behaviors>
+                <behaviors:GradientBehavior GradientColor="#0000FF" />
+            </skia:SKCanvasView.Behaviors>
+        </skia:SKCanvasView>
+    </Grid>
+    
+</ContentPage>
